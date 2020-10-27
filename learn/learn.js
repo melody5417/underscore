@@ -143,4 +143,51 @@ function findWhere() {
 }
 findWhere()
 
+// every alias all
+function every() {
+    // _.identity 就是 return value
+    var result = _.every([true, 1, null, 'yes'], _.identity);
+    // => false
+}
+every()
+
+// some alias any
+function some() {
+    // "yes" 为true
+    var result = _.some([null, 0, 'yes', false]);
+    // => true 
+}
+some()
+
+function contains() {
+    var result = _.contains(numArray, 3)
+}
+contains()
+
+function invoke() {
+    var result = _.invoke([[5, 1, 7], [3, 2, 1]], 'sort');
+    var result2 = _.invoke([[5, 1, 7], [3, 2, 1]], 'pop');
+}
+invoke()
+
+function pluck() {
+    var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
+    var result = _.pluck(stooges, 'name');
+}
+pluck()
+
+// max min
+// 如果list为空，将返回-Infinity，所以你可能需要事先用isEmpty检查 list 。
+function max() {
+    var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
+    var result = _.max(stooges, function(stooge){ return stooge.age; });
+    var result2 = _.max([], function(stooge){ return stooge.age; });
+}
+max()
+
+function sortBy() {
+    
+}
+
+
 
