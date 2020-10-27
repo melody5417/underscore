@@ -5,6 +5,7 @@
 
   QUnit.test('each', function(assert) {
     _.each([1, 2, 3], function(num, i) {
+      console.log('each', num, i)
       assert.strictEqual(num, i + 1, 'each iterators provide value and iteration count');
     });
 
